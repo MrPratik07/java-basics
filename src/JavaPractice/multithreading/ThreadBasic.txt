@@ -1,0 +1,30 @@
+
+MULTITHREADING AND CONCEPTS
+
+1. Concurrency in Java
+this refers to multiple task or threads running at a same time simultaneously for better and efficient
+execution
+
+2. Thread
+Thread is a smallest unit of a program that can be executed independently. Java programs are inherently single
+threaded but it can multi-threaded and run in parallel
+
+3.Process vs Thread
+Process : An executing instance of a program
+Thread : lightWeight unit of a process, single process can have multiple threads
+
+4. Thread LifeCycle
+New, Runnable, Blocked, waiting, time waiting, terminated
+
+5. Creating Threads
+  a. Extending Thread class
+  b. implementing Runnable interface
+
+6. Executor Service
+A more advanced and flexible way to manage threads in Java is through the Executor framework,
+especially ExecutorService. This allows for managing a pool of threads efficiently.
+
+7 Synchronization
+To avoid issues with data being corrupted when multiple threads access shared resources,
+you need to control access using synchronization.
+
