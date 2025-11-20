@@ -241,6 +241,7 @@
 import DSA.Employee;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 //List<Employee> employee = Arrays.asList(new Employee("Male",25000, "Rakesh",25, 1),
@@ -271,3 +272,72 @@ import java.util.stream.Collectors;
 //                .reversed()).skip(1).findFirst();
 //
 //        System.out.println(secondHigest);
+
+
+//List<String> names = Arrays.asList("Alice", "Bob", "Alice", "Tom", "Bob", "John");
+//Set<String> unique = new HashSet<>();
+// an use distinct method directly
+//List<String> uniqueNames = names.stream().filter(e -> !unique.add(e)).collect(Collectors.toList());
+//System.out.println(uniqueNames);
+
+//List<Customer> customers = Arrays.asList(new Customer("Pratik","Maharashtra",100000),
+//        new Customer("Pratik1","Maharashtra",100000),
+//        new Customer("Pratik2","Goa",130000),
+//        new Customer("Pratik3","Bihar",100000),
+//        new Customer("Pratik4","Maharashtra",150000));
+//
+//Map<String, List<Customer>> groupByState = customers.stream().collect(Collectors.groupingBy(Customer::getState));
+////System.out.println(groupByState);
+//
+//Map<String, Optional<Customer>> groupByMaxSalary = customers.stream()
+//        .collect(Collectors.groupingBy(Customer::getState, Collectors.maxBy(Comparator.comparingDouble(Customer::getSalary))));
+//        for(String c: groupByMaxSalary.keySet()) {
+//        //System.out.println(c+"->"+groupByMaxSalary.get(c).get().getName());
+//        }
+//
+//
+//List<String> items = Arrays.asList("Apple", "Banana", "Orange");
+//String join = items.stream().collect(Collectors.joining(", "));
+////System.out.println(join);
+//
+//List<Integer> numbers = Arrays.asList(1, 20, 3, 4, 5, 6, 25);
+//List<String> startwithTwo = numbers.stream().map(e -> e.toString()).filter(s -> s.startsWith("2")).toList();
+////System.out.println(startwithTwo);
+//Map<Boolean, List<Integer>> sortEvenOdd = numbers.stream().collect(Collectors.groupingBy(e -> e % 2 == 0));
+////System.out.println(sortEvenOdd);
+//
+//List<String> words = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
+//Map<String, Long> collect = words.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+////System.out.println(collect);
+//
+//List<Customer> sorted = customers.stream()
+//        .sorted(Collections.reverseOrder(Comparator.comparingDouble(Customer::getSalary))
+//                .thenComparing(Customer::getName))
+//        .collect(Collectors.toList());
+//        for(
+//Customer c:sorted) {
+//        //System.out.println(c.getName()+" "+c.getSalary());
+//        }
+//
+//
+//List<String> bihar = customers.stream().filter(e -> e.getState().equals("Bihar")).map(Customer::getName).collect(Collectors.toList());
+////System.out.println(bihar);
+//
+//List<List<String>> nested = Arrays.asList(
+//        Arrays.asList("a", "b"),
+//        Arrays.asList("c", "d")
+//);
+//
+//List<String> flattern = nested.stream().flatMap(List::stream).collect(Collectors.toList());
+//// System.out.println(flattern);
+//
+//String input = "swiss";
+//
+//Optional<Character> firstNonRepeating = input.chars().mapToObj(c -> (char) c)
+//        .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+//        .entrySet()
+//        .stream()
+//        .filter(e -> e.getValue() == 1)
+//        .map(Map.Entry::getKey)
+//        .findFirst();
+//        System.out.println(firstNonRepeating.orElse(null));
